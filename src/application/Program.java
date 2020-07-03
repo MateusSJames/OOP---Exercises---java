@@ -3,8 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Rectangle;
-
+import entities.Employee;
 
 public class Program {
 
@@ -12,15 +11,27 @@ public class Program {
 
 		Locale.setDefault(Locale.US);
     	Scanner sc = new Scanner(System.in);
+    	Employee emp = new Employee();
     	
-    	Rectangle r = new Rectangle();
-    	System.out.println("Enter rectangle width and height:");
+    	System.out.println("Enter Employee data: ");
     	
-    	r.width = sc.nextDouble();
-    	r.height = sc.nextDouble();
+    	System.out.print("Name: ");
+    	emp.name = sc.nextLine();
+    	System.out.print("Gross salary: ");
+    	emp.grossSalary = sc.nextDouble();
+    	System.out.print("Tax: ");
+    	emp.tax = sc.nextDouble();
     	
-    	System.out.println(r);
+    	System.out.println();
+    	System.out.println("Employee: " + emp);
     	
+    	System.out.println();
+    	System.out.print("Which percentage to increase salary? ");
+    	double per = sc.nextDouble();
+    	emp.increaseSalary(per);
+    	
+    	System.out.println();
+    	System.out.println("Updated data: " + emp);
 	}
 
 }
