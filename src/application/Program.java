@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Employee;
+import entities.Student;
 
 public class Program {
 
@@ -11,27 +11,28 @@ public class Program {
 
 		Locale.setDefault(Locale.US);
     	Scanner sc = new Scanner(System.in);
-    	Employee emp = new Employee();
+    	Student a = new Student();
     	
-    	System.out.println("Enter Employee data: ");
-    	
+    	System.out.println("Enter Student data: ");
     	System.out.print("Name: ");
-    	emp.name = sc.nextLine();
-    	System.out.print("Gross salary: ");
-    	emp.grossSalary = sc.nextDouble();
-    	System.out.print("Tax: ");
-    	emp.tax = sc.nextDouble();
+    	a.name = sc.nextLine();
+    	System.out.print("Grade 1: ");
+    	a.nota = sc.nextDouble();
+    	System.out.print("Grade 2: ");
+    	a.nota2 = sc.nextDouble();
+    	System.out.print("Grade 3: ");
+    	a.nota3 = sc.nextDouble();
     	
     	System.out.println();
-    	System.out.println("Employee: " + emp);
-    	
-    	System.out.println();
-    	System.out.print("Which percentage to increase salary? ");
-    	double per = sc.nextDouble();
-    	emp.increaseSalary(per);
-    	
-    	System.out.println();
-    	System.out.println("Updated data: " + emp);
+    	System.out.println(a);
+    	double b = a.grade();
+    	if(b == 0.0) {
+    		System.out.println("PASS");
+    	}
+    	else {
+    		System.out.println("FAILED");
+    		System.out.println("MISSING " + String.format("%.2f", b) + " POINTS" );
+    	}
 	}
 
 }
